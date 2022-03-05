@@ -20,7 +20,7 @@
                                 <rect key="frame" x="19.999999999999996" y="322" width="46.666666666666657" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="Hdl-gE-oiL"/>
-                                    <constraint firstAttribute="width" constant="46.666666666666657" id="avg-6e-9Qn"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46.666666666666657" id="avg-6e-9Qn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -42,12 +42,15 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ulz-3j-e9p">
                                 <rect key="frame" x="105.66666666666666" y="322" width="304.33333333333337" height="31"/>
                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="redSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="lqb-QM-DhO"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TK2-5h-hgO">
                                 <rect key="frame" x="19.999999999999996" y="359" width="46.666666666666657" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="JtR-nl-z65"/>
-                                    <constraint firstAttribute="width" constant="46.666666666666657" id="c3c-uH-Su5"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46.666666666666657" id="c3c-uH-Su5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -65,11 +68,14 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ATQ-ZB-sxQ">
                                 <rect key="frame" x="106" y="359" width="304" height="31"/>
                                 <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
+                                <connections>
+                                    <action selector="greenSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="ZZY-MA-nYu"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JX-wW-0PS">
                                 <rect key="frame" x="19.999999999999996" y="396" width="46.666666666666657" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46.666666666666657" id="FAb-zl-zkz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46.666666666666657" id="FAb-zl-zkz"/>
                                     <constraint firstAttribute="height" constant="29" id="Wzz-aa-CoX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -87,6 +93,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uLv-07-2MB">
                                 <rect key="frame" x="106" y="395" width="304" height="31"/>
+                                <connections>
+                                    <action selector="blueSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="voM-pg-0e9"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -122,6 +131,15 @@
                             <constraint firstItem="DIE-GE-p5o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="zVC-aD-M7a"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueLabelValue" destination="yhd-aM-Ac9" id="AUP-lX-n19"/>
+                        <outlet property="blueSliderOutlet" destination="uLv-07-2MB" id="ywt-O4-GdS"/>
+                        <outlet property="colorСhangingView" destination="DIE-GE-p5o" id="rSc-Kk-sin"/>
+                        <outlet property="greenLabelValue" destination="Rmx-yR-dqc" id="K3R-N7-ThH"/>
+                        <outlet property="greenSliderOutlet" destination="ATQ-ZB-sxQ" id="KuM-Vr-91D"/>
+                        <outlet property="redLabelValue" destination="lq8-pg-sMh" id="wPx-Ba-D2u"/>
+                        <outlet property="redSliderOutlet" destination="ulz-3j-e9p" id="NA1-lC-rm8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
