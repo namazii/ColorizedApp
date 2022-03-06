@@ -19,24 +19,50 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenSliderOutlet: UISlider!
     @IBOutlet weak var blueSliderOutlet: UISlider!
     
+    private var redValue = Float()
+    private var greenValue = Float()
+    private var blueValue = Float()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        redLabelValue.text = String(round(redSliderOutlet.value * 10) / 10)
-        greenLabelValue.text = String(round(greenSliderOutlet.value * 10) / 10)
-        blueLabelValue.text = String(round(blueSliderOutlet.value * 10) / 10)
+        colorValue()
+        colorChangeView(red: redValue, green: greenValue, blue: blueValue)
+        labelValueText()
     }
     
     @IBAction func redSliderAction() {
-        redLabelValue.text = String(round(redSliderOutlet.value * 10) / 10)
+        labelValueText()
+        colorValue()
+        colorChangeView(red: redValue, green: greenValue, blue: blueValue)
     }
     @IBAction func greenSliderAction() {
-        greenLabelValue.text = String(round(greenSliderOutlet.value * 10) / 10)
+        labelValueText()
+        colorValue()
+        colorChangeView(red: redValue, green: greenValue, blue: blueValue)
     }
     @IBAction func blueSliderAction() {
-        blueLabelValue.text = String(round(blueSliderOutlet.value * 10) / 10)
+        labelValueText()
+        colorValue()
+        colorChangeView(red: redValue, green: greenValue, blue: blueValue)
     }
     
-
+    
+    private func colorChangeView (red: Float, green: Float, blue: Float) {
+    colorСhangingView.backgroundColor = UIColor(
+        red: CGFloat(redValue),
+        green: CGFloat(greenValue),
+        blue: CGFloat(blueValue), alpha: 1.0
+    )
+    }
+    private func colorValue() {
+        redValue = Float(redSliderOutlet.value)
+        greenValue = Float(greenSliderOutlet.value)
+        blueValue = Float(blueSliderOutlet.value)
+    }
+    private func labelValueText() {
+        redLabelValue.text = String(round(redSliderOutlet.value * 10) / 10)
+        greenLabelValue.text = String(round(greenSliderOutlet.value * 10) / 10)
+        blueLabelValue.text = String(round(blueSliderOutlet.value * 10) / 10)
+    }
 }
 
